@@ -1,0 +1,111 @@
+
+  html {
+    font-size: 16px;
+  }
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/*LAYOUT*/
+
+.categorias-disponiveis-div {
+    position: absolute;
+    background-color: white;
+    max-height:400px;
+    display:flex;
+    flex-direction:column;
+    flex-wrap:wrap;
+}
+
+.categoria {
+    position:relative;
+    padding:15px 35px;
+    cursor: pointer;
+    transition:background 200ms;
+}
+
+.categoria:hover{
+    background:silver;
+}
+
+.tipos-disponiveis-div {
+    position: absolute;
+    background-color: white;
+    margin-left: 145px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+
+.tipos {
+    position: relative;
+    padding: 15px;
+    background: white;
+    z-index: 999;
+    transition: background 200ms;
+    cursor:pointer;
+}
+
+.tipos:hover{
+    background:silver;
+}
+
+.fixed-left-menu{
+    position:fixed;
+    left:0;
+    top:57px;
+}
+
+  
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #d4d4d4; 
+  }
+  
+  .autocomplete-items div:hover {
+    background-color: #e9e9e9; 
+  }
+  
+  .autocomplete-active {
+    background-color: DodgerBlue !important; 
+    color: #ffffff; 
+  }
+
+  .main-container{
+      padding:50px 0 0 100px;
+  }
+
+/*INDEX*/
+#imagem-produto {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/*CREATE*/
+#preview {
+    height: 300px;
+}

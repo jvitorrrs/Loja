@@ -1,0 +1,64 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Loja</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Loja.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom position-fixed w-100">
+        <a class="navbar-brand" asp-area="" asp-controller="Produtos" asp-action="Index">Loja</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" asp-area="" asp-controller="Produtos" asp-action="Create">Cadastrar Novo Produto<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <div class="categoria-div-container">
+            <div class="categoria-div">
+                <a class="nav-link font-weight-bold" asp-area="" asp-controller="" asp-action="" id="ddlCategoria">Categoria<span class="sr-only">(current)</span></a>
+            </div>
+        </div>   
+      </li>
+    </ul>
+    <form method="post" enctype="multipart/form-data" autocomplete="off" class="form-inline my-2 my-lg-0">
+      <div class="position-relative">
+      <input class="form-control mr-sm-2" name="nomePesquisa" type="search" id="busca-input" onclick="autoCompleteStart(this)" placeholder="Buscar" aria-label="Search" required>
+      <button class="btn btn-outline-success my-2 my-sm-0" onclick="renderSearchView()" id="search-button" type="submit">Buscar</button>
+      </div>
+    </form>
+  </div>
+</nav>
+@RenderSection("FilterSideMenu")
+    </header>
+    <div class="container">
+        <div class="main-container">
+            <main role="main" class="pb-3 pt-5" id="container">
+            @RenderBody()
+            </main>
+        </div>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - Loja 
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
